@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
   res.type('application/json');
 
   if (isUrl(url)) {
-    scrutinize(req.param('url'), {}, function(data) {
+    scrutinize(url, {}, function(data) {
       res.send(JSON.stringify(data));
     });
   } else {
