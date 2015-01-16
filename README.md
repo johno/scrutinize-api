@@ -2,6 +2,10 @@
 
 A JSON API that returns scrutinize data for the url specified.
 
+#### See it in action
+
+<http://scrutinize.herokuapp.com/?url=furtive.co>
+
 ## Installation
 
 ```
