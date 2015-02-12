@@ -6,12 +6,12 @@ var normalizeUrl = require('normalize-url')
 var scrutinize = require('scrutinize')
 
 var cors = {
-  origin: ['http://localhost:8000', 'http://scrutinize.divshot.io/'],
+  origin: ['http://localhost:8000', 'localhost:8000', 'http://scrutinize.divshot.io/'],
   default: 'http://scrutinize.divshot.io'
 }
 
 app.use(function(req, res, next) {
-  var origin = cors.origin.indexOf(req.header('host').toLowerCase()) > -1 ? req.headers.origin : cors.default
+  var origin = cors.origin.indexOf(req.headers.origin.toLowerCase()) > -1 ? req.headers.origin : cors.default
 
   res.header('Access-Control-Allow-Origin', origin)
   res.setHeader('Access-Control-Allow-Methods', 'GET')
