@@ -1,6 +1,6 @@
 # Scrutinize API
 
-A JSON API that returns scrutinize data for the url specified.
+A JSON API that returns [scrutinize](https://github.com/johnotander/scrutinize) data for the url specified.
 
 #### See it in action
 
@@ -10,8 +10,7 @@ A JSON API that returns scrutinize data for the url specified.
 
 ```
 git clone https://github.com/johnotander/scrutinize-api.git && cd scrutinize-api
-npm i
-node app.js
+npm i && npm start
 ```
 
 ## Usage

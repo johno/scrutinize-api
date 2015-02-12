@@ -11,7 +11,7 @@ var cors = {
 }
 
 app.use(function(req, res, next) {
-  var origin = cors.origin.indexOf(req.headers.origin.toLowerCase()) > -1 ? req.headers.origin : cors.default
+  var origin = cors.origin.indexOf((req.headers.origin || '').toLowerCase()) > -1 ? req.headers.origin : cors.default
 
   res.header('Access-Control-Allow-Origin', origin)
   res.setHeader('Access-Control-Allow-Methods', 'GET')
