@@ -5,10 +5,17 @@ var isUrl = require('is-url')
 var normalizeUrl = require('normalize-url')
 var scrutinize = require('scrutinize')
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000')
+var cors = {
+  origin: ['localhost:8000', 'scrutinize.divshot.io/'],
+  default: 'scrutinize.divshot.io'
+}
+
+app.use(function(req, res, next) {
+  var origin = cors.origin.indexOf(req.header('host').toLowerCase()) > -1 ? req.headers.origin : cors.default
+
+  res.header('Access-Control-Allow-Origin', origin)
   res.setHeader('Access-Control-Allow-Methods', 'GET')
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
 
   next()
 })
