@@ -6,8 +6,8 @@ var normalizeUrl = require('normalize-url')
 var scrutinize = require('scrutinize')
 
 var cors = {
-  origin: ['localhost:8000', 'scrutinize.divshot.io/'],
-  default: 'scrutinize.divshot.io'
+  origin: ['http://localhost:8000', 'http://scrutinize.divshot.io/'],
+  default: 'http://scrutinize.divshot.io'
 }
 
 app.use(function(req, res, next) {
